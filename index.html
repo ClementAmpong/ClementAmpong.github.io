@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Academic Website</title>
+    <title>Clement Ampong's Academic Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -106,7 +106,7 @@
             navLinks.forEach(link => {
                 link.addEventListener('click', (event) => {
                     const sectionId = event.target.getAttribute('data-section');
-                    showSection(sectionId);
+                    if (sectionId) showSection(sectionId);
                 });
             });
         });
@@ -114,34 +114,32 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to my page! </h1>
+        <h1>Welcome to Clement Ampong's Academic Website</h1>
     </header>
     <nav>
-        <a data-section="about">Clement Ampong</a>
-        <a data-section="projects">Projects</a>
+        <a data-section="about" href="#about">Clement Ampong</a>
+        <a data-section="projects" href="#projects">Projects</a>
         <div class="dropdown">
             <a href="#">More</a>
             <div class="dropdown-content">
-                <a href="#" onclick="showSection('research')">Research</a>
-                <a href="#" onclick="showSection('funding')">Funding</a>
-                <a href="#" onclick="showSection('teaching')">Teaching</a>
-                <a href="#" onclick="showSection('publications')">Publications</a>
-                <a href="#" onclick="showSection('other')">Other</a>
+                <a href="#research" onclick="showSection('research')">Research</a>
+                <a href="#funding" onclick="showSection('funding')">Funding</a>
+                <a href="#teaching" onclick="showSection('teaching')">Teaching</a>
+                <a href="#publications" onclick="showSection('publications')">Publications</a>
+                <a href="#other" onclick="showSection('other')">Other</a>
             </div>
         </div>
-        <a data-section="contact">Contact</a>
+        <a data-section="contact" href="#contact">Contact</a>
     </nav>
     <main>
         <section id="about" class="active">
             <div class="about-sidebar">
-                <img src="https://github.com/ClementAmpong/ClementAmpong.github.io/blob/main/me.jpg" alt="Profile Picture">
+                <img src="images/me.jpg" alt="Profile Picture">
                 <div>
                     <h2>About Me</h2>
                     <p>I am Clement Ampong, a passionate Mathematics student currently pursuing my Master’s degree at Georgia State University, with a concentration in Scientific Computing.</p>
-                    <p>My academic journey is fueled by curiosity and a commitment to using mathematics to solve real-world challenges. I have experience in teaching, research, and collaborative projects, including forecasting disease dynamics, modeling growth trajectories, and advancing numerical methods. These experiences have sharpened my technical abilities and strengthened my drive to innovate.</p>
-                    <p>I am an organized and motivated individual, eager to contribute my skills in both academic and professional environments. My long-term goal is to pursue a Ph.D. in Mathematics with a focus on Machine Learning and Data Science, where I aspire to make significant contributions to the fields of technology, healthcare, and education.</p>
-                    <p>In addition to my academic pursuits, I am dedicated to mentoring and inspiring others to appreciate the power of mathematics. I believe in fostering collaborative learning and embracing opportunities that facilitate growth and positive impact.</p>
-                    <p><a href="C:\Users\Clement Ampong\Desktop\Fall 24\Teaching coll. Maths\website\My_Resume.pdf" target="_blank">Curriculum Vitae</a></p>
+                    <p>My academic journey is fueled by curiosity and a commitment to using mathematics to solve real-world challenges. I have experience in teaching, research, and collaborative projects, including forecasting disease dynamics, modeling growth trajectories, and advancing numerical methods.</p>
+                    <p><a href="files/My_Resume.pdf" target="_blank">Curriculum Vitae</a></p>
                 </div>
             </div>
             <h2>Education</h2>
@@ -155,30 +153,14 @@
                 <li>Numerical Methods and Scientific Computing</li>
                 <li>Epidemiological Modeling</li>
                 <li>Optimization and Applied Mathematics</li>
-                <li>Deep Learning </li>
+                <li>Deep Learning</li>
             </ul>
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <div class="project">
+            <div>
                 <h3>Forecasting Growth Trajectories Using Phenomenological Growth Models</h3>
-                <p>Applied the QuantDiffForecast toolbox to model and forecast time-series data of daily monkeypox cases in the USA using phenomenological growth models. This project aimed to accurately predict growth trajectories, understand the dynamics of disease spread, and assess the practical implications of the models in guiding public health decisions. The work demonstrates the effectiveness of advanced mathematical tools in addressing emerging health challenges and provides a framework for applying similar methodologies to other infectious diseases.</p>
-                <a href="#">View Details</a>
-            </div>
-            <div class="project">
-                <h3>Forecasting Influenza Dynamics in the US</h3>
-                <p>Developed predictive models to forecast influenza epidemics in the United States using the n-sub epidemic model and the STAT MOD PREDICT toolbox. This project evaluated the performance of various forecasting approaches to provide accurate and timely predictions of influenza dynamics. The goal was to support public health planning and intervention strategies by identifying patterns and trends in disease spread. This work underscores the importance of mathematical modeling in epidemic forecasting and highlights its potential to mitigate the impact of seasonal influenza outbreaks.</p>
-                <a href="#">View Details</a>
-            </div>
-            <div class="project">
-                <h3>Effectiveness of Chelation Treatment with Succimer on Blood Lead Levels in Children</h3>
-                <p>Developed a robust SAS model to analyze longitudinal data on blood lead levels in children, focusing on assessing the effectiveness of Succimer compared to a placebo. This study aimed to evaluate the treatment's impact over time, identify patterns in lead reduction, and provide statistical insights into its efficacy and safety. The project highlights the importance of data-driven approaches in public health interventions and offers valuable recommendations for future clinical applications.</p>
-                <a href="#">View Details</a>
-            </div>
-            <div class="project">
-                <h3>Direct and Iterative Methods to Solve Two-Point Boundary Value Problems</h3>
-                <p>Designed and implemented a MATLAB model to solve two-point boundary value problems using the conjugate gradient method. The project aimed to compare the performance, accuracy, and computational efficiency of the method when applied as a direct solver versus an iterative approach. This work provides valuable insights into the practical applications of numerical methods in solving complex differential equations and highlights the trade-offs between solution techniques in mathematical modeling.</p>
-                <a href="#">View Details</a>
+                <p>Applied the QuantDiffForecast toolbox to model and forecast time-series data of daily monkeypox cases in the USA using phenomenological growth models.</p>
             </div>
         </section>
         <section id="research">
@@ -197,15 +179,10 @@
             <h2>Publications</h2>
             <p>List your published papers, articles, or other significant contributions.</p>
         </section>
-        <section id="other">
-            <h2>Other</h2>
-            <p>Add any additional information or accomplishments you'd like to share.</p>
-        </section>
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:campong1@gsu.edu">campong1@gsu.edu</a></p>
             <p>GitHub: <a href="https://github.com/ClementAmpong">github.com/ClementAmpong</a></p>
-            <p>Address: Georgia State University, Atlanta, GA, 30328</p>
         </section>
     </main>
     <footer>
