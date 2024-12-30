@@ -118,8 +118,8 @@
     </header>
     <nav>
         <a data-section="about" href="#about" onclick="changeHeader('Welcome to Ampong\'s Home Page', '')">Clement Ampong</a>
-        <a data-section="projects" href="#projects" onclick="changeHeader('Projects', 'images/prt.png')">Projects</a>
-        <a data-section="research" href="#research" onclick="changeHeader('Research', 'images/rsh.png')">Research</a>
+        <a data-section="projects" href="#projects" onclick="changeHeader('Projects', 'images/prt.webp')">Projects</a>
+        <a data-section="research" href="#research" onclick="changeHeader('Research', 'images/rsh.jpg')">Research</a>
         <a data-section="contact" href="#contact" onclick="changeHeader('Contact', '')">Contact</a> 
     </nav>
 
@@ -131,12 +131,14 @@
             // Update the header title
             headerTitle.textContent = title;
 
-            // Update the background image or reset to default color
+           // Update the background image or reset to default color
             if (imageUrl) {
                 header.style.backgroundImage = `url('${imageUrl}')`;
                 header.style.backgroundSize = 'cover';
                 header.style.backgroundPosition = 'center';
-                header.style.color = 'white'; // Ensure text is visible over the image
+                header.style.backgroundRepeat = 'no-repeat';
+                header.style.backgroundColor = ''; // Clear any default color
+                header.style.color = 'white'; // Ensure text visibility
             } else {
                 header.style.backgroundImage = ''; // Remove background image
                 header.style.backgroundColor = '#283593'; // Default blue color
