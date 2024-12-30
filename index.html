@@ -111,23 +111,39 @@
             });
         });
     </script>
-</head>
+</head> 
 <body>
-    <header>
+    <header id="main-header" style="background-color: #283593; color: white; text-align: center; padding: 20px;">
         <h1 id="header-title">Welcome to Ampong's Home Page</h1>
     </header>
     <nav>
-        <a data-section="about" href="#about" onclick="changeHeader('Welcome to Ampong\'s Home Page')">Clement Ampong</a>
-        <a data-section="projects" href="#projects" onclick="changeHeader('Projects')">Projects</a>
-        <a data-section="research" href="#research" onclick="changeHeader('Research')">Research</a>
-        <a data-section="contact" href="#contact" onclick="changeHeader('Contact')">Contact</a> 
+        <a data-section="about" href="#about" onclick="changeHeader('Welcome to Ampong\'s Home Page', '')">Clement Ampong</a>
+        <a data-section="projects" href="#projects" onclick="changeHeader('Projects', 'images/prt.png')">Projects</a>
+        <a data-section="research" href="#research" onclick="changeHeader('Research', 'images/rsh.png')">Research</a>
+        <a data-section="contact" href="#contact" onclick="changeHeader('Contact', '')">Contact</a> 
     </nav>
 
     <script>
-        function changeHeader(title) {
-            document.getElementById('header-title').textContent = title;
+        function changeHeader(title, imageUrl) {
+            const header = document.getElementById('main-header');
+            const headerTitle = document.getElementById('header-title');
+            
+            // Update the header title
+            headerTitle.textContent = title;
+
+            // Update the background image or reset to default color
+            if (imageUrl) {
+                header.style.backgroundImage = `url('${imageUrl}')`;
+                header.style.backgroundSize = 'cover';
+                header.style.backgroundPosition = 'center';
+                header.style.color = 'white'; // Ensure text is visible over the image
+            } else {
+                header.style.backgroundImage = ''; // Remove background image
+                header.style.backgroundColor = '#283593'; // Default blue color
+            }
         }
     </script>
+</body>
 
     <main>
         <section id="about" class="active">
